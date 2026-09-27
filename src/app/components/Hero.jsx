@@ -66,7 +66,7 @@ export default function Hero() {
             Timeless Elegance on Your wrist
           </h1>
 
-          <div className="flex gap-3">
+          <div className="flex gap-3 mr-5">
             <Link
               href="#collection"
               className="flex items-center gap-2 bg-white text-black font-semibold px-6 py-2 rounded-2xl hover:bg-white/80 transition"

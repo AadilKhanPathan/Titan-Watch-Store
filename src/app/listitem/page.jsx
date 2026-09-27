@@ -13,7 +13,7 @@ export default async function page() {
     }
 
     const data = await res.json();
-    // console.log(data)
+    console.log(data)
     return data.list ?? [];
   } catch (error) {
     console.error("getData error:", error);

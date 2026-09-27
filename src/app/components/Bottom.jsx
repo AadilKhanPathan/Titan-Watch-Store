@@ -6,15 +6,19 @@ import Link from "next/link";
 import {
   Heart,
   Home,
+  LayoutDashboard,
   LayoutPanelTop,
   LogOut,
   MapPinHouse,
   MessageCircleQuestionMark,
   Package,
+  ScrollText,
   Settings,
   ShoppingCart,
+  SquareDashedPlus,
   SquareUserRound,
   User,
+  UserGroup,
 } from "lucide-react";
 import { AlarmClock, Clock, Watch } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -43,11 +47,16 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 // AVATAR
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  Avatar,
+  AvatarBadge,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar";
 
 export default function Bottom() {
   const [open, setOpen] = useState(false);
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession();
 
   return (
     <div className="sticky bottom-0 z-50 bg-white w-full">
@@ -58,7 +67,7 @@ export default function Bottom() {
         </li>
 
         {/* CATEGORY SWIPE HANDLE */}
-        <Drawer showSwipeHandle open={open} onOpenChange={setOpen} >
+        <Drawer showSwipeHandle open={open} onOpenChange={setOpen}>
           <DrawerTrigger
             render={
               <button className="text-black hover:border-b-2 hover:border-black cursor-pointer flex flex-col items-center ">
@@ -67,8 +76,8 @@ export default function Bottom() {
               </button>
             }
           />
-          <DrawerContent className="bg-white/60 ">
-            <DrawerHeader >
+          <DrawerContent className="bg-white/60 rounded-t-2xl overflow-hidden ">
+            <DrawerHeader>
               <DrawerTitle>Categories</DrawerTitle>
               <DrawerDescription>Select your category</DrawerDescription>
             </DrawerHeader>
@@ -139,66 +148,135 @@ export default function Bottom() {
             }
           />
 
-          
-          {session ? 
-          // user is logged in
-          <DropdownMenuContent className="w-1xl rounded-xl">
-            <DropdownMenuGroup>
-              <DropdownMenuItem className={"flex items-center gap-4"}>
+          {session ? (
+            // user is logged in
+            <DropdownMenuContent className="w-1xl rounded-xl">
+              <DropdownMenuGroup>
+                {/* USER IS NOT ADMIN */}
+
+                <DropdownMenuItem className={"flex items-center gap-4"}>
+                  <Avatar>
+                    <AvatarImage
+                      src={session?.user.image}
+                      alt="@shadcn"
+                      className=""
+                    />
+                    <AvatarFallback>
+                      <User />
+                    </AvatarFallback>
+                    
+                  </Avatar>
+                  <div>
+                    {session?.user.name}
+                    <div>{session?.user.email} </div>
+                  </div>
+                </DropdownMenuItem>
+                <DropdownMenuItem className={"h-10 text-sm"}>
+                  <Package />
+                  My Orders
+                </DropdownMenuItem>
+                <DropdownMenuItem className={"h-10 text-sm"}>
+                  <MapPinHouse />
+                  Addresses
+                </DropdownMenuItem>
+                <DropdownMenuItem className={"h-10 text-sm"}>
+                  <Settings />
+                  Settings
+                </DropdownMenuItem>
                 
-                {/* AVATAR */}
-                <Avatar>
-                  <AvatarImage
-                    src={session?.user.image}
-                    alt="@shadcn"
-                    className="grayscale"
-                  />
-                  <AvatarFallback><User/></AvatarFallback>
-                </Avatar>
-                <div>
-                {session?.user.name}<div>{session?.user.email} </div>
-                </div>
+
+                {/* USER IS A ADMIN */}
+                <DropdownMenuItem className={"flex items-center gap-4"}>
+                  <Avatar>
+                    <AvatarImage
+                      src={session?.user.image}
+                      alt="@shadcn"
+                      className=""
+                    />
+                    <AvatarFallback>
+                      <User />
+                    </AvatarFallback>
+                    <AvatarBadge className="bg-green-600 dark:bg-green-800" />
+                  </Avatar>
+                  <div>
+                    <div className="flex justify-between gap-4">
+                      <span>{session?.user.name}</span>
+                      <span className="mr-4 bg-green-400 text-green-900 px-2 rounded-sm ">
+                        Admin
+                      </span>
+                    </div>
+                    <div>Store Owner</div>
+                  </div>
+                </DropdownMenuItem>
+                <DropdownMenuItem className={"h-10 text-sm"}>
+                  <LayoutDashboard />
+                  Dashboard
+                </DropdownMenuItem>
+                <DropdownMenuItem className={"h-10 text-sm"}>
+                  <SquareDashedPlus />
+                  <Link href={"/additem"}>
+                  Add item</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className={"h-10 text-sm"}>
+                  <ScrollText />
+                  <Link href={"/listitem"}>products data</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className={"h-10 text-sm"}>
+                  <UserGroup />
+                  Customers
+                </DropdownMenuItem>
+
+                <DropdownMenuSeparator />
+              </DropdownMenuGroup>
+
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                className={"text-red-600 text-sm hover:text-red-600 "}
+              >
+                <LogOut />
+                <button onClick={() => signOut("google", { callbackUrl: "/" })}>
+                  Log Out
+                </button>
               </DropdownMenuItem>
-            <DropdownMenuSeparator />
+            </DropdownMenuContent>
+          ) : (
+            // USer is not logged in
+            <DropdownMenuContent className="w-1xl text-3xl rounded-xl">
+              <DropdownMenuGroup>
+                <DropdownMenuItem className={"flex items-center gap-4"}>
+                  {/* AVATAR */}
+                  <Avatar>
+                    <AvatarImage
+                      src={session?.user.image}
+                      alt=""
+                      className=""
+                    />
 
-              <DropdownMenuItem className={"h-10 text-sm"}><Package />My Orders</DropdownMenuItem>
-              <DropdownMenuItem className={"h-10 text-sm"}><MapPinHouse />Addresses</DropdownMenuItem>
-              <DropdownMenuItem className={"h-10 text-sm"}><Settings />Settings</DropdownMenuItem>
-            </DropdownMenuGroup>
-          
-            <DropdownMenuSeparator />
-            <DropdownMenuItem className={"text-red-600 text-sm"}><LogOut /><button onClick={() => signOut("google", {callbackUrl:"/"})}>Log Out</button></DropdownMenuItem>
-           
-          </DropdownMenuContent>
-          
-          : 
+                    <AvatarFallback>
+                      <User />
+                    </AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <button
+                      onClick={() => signIn("google", { callbackUrl: "/" })}
+                    >
+                      Sign in
+                    </button>
+                  </div>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
 
-          // USer is not logged in
-          <DropdownMenuContent className="w-1xl text-3xl rounded-xl">
-            <DropdownMenuGroup>
-              <DropdownMenuItem className={"flex items-center gap-4"}>
-                
-                {/* AVATAR */}
-                <Avatar>
-                  <AvatarImage
-                    src={session?.user.image}
-                    alt="@shadcn"
-                    className="grayscale"
-                  />
-                  <AvatarFallback><User/></AvatarFallback>
-                </Avatar>
-                <div>
-                <button onClick={() => signIn("google", {callbackUrl:"/"})}>Sign in</button>
-                </div>
-              </DropdownMenuItem>
-            <DropdownMenuSeparator />
-
-              <DropdownMenuItem className={"text-sm"}><Settings />Settings</DropdownMenuItem>
-              <DropdownMenuItem className={"text-sm"}><MessageCircleQuestionMark />Help & Support</DropdownMenuItem>
-            </DropdownMenuGroup>
-            
-          </DropdownMenuContent>}
-          
+                <DropdownMenuItem className={"text-sm"}>
+                  <Settings />
+                  Settings
+                </DropdownMenuItem>
+                <DropdownMenuItem className={"text-sm"}>
+                  <MessageCircleQuestionMark />
+                  Help & Support
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          )}
         </DropdownMenu>
       </ul>
     </div>
