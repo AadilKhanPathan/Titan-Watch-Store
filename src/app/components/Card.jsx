@@ -1,23 +1,18 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import axios from "axios";
 
 async function getData(category) {
   try {
     console.log(category);
-    const res = await fetch(
-      `https://e-commerce-backend-4l6u.onrender.com/api/user/category/${category}`,
-      //   { next: { revalidate: 60 } } // cache for 60s, adjust as needed
-    );
+    const res = await axios.get(
+      `https://e-commerce-backend-4l6u.onrender.com/api/user/category/${category}`
+        );
 
-    if (!res.ok) {
-      throw new Error(`Failed to fetch collections: ${res.status}`);
-    }
+    console.log(res.data);
 
-    const data = await res.json();
-    console.log(data);
-
-    return data.data ?? [];
+    return res.data.data ?? [];
+    
   } catch (error) {
     console.error("getData error:", error);
     return [];

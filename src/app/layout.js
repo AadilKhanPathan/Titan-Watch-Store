@@ -1,4 +1,4 @@
-import { Quantico } from "next/font/google";
+import { Quantico, Silkscreen } from "next/font/google";
 import "./globals.css";
 import { SessionProvider } from "next-auth/react";
 import Navbar from "./components/Navbar";
@@ -9,6 +9,11 @@ const quantico = Quantico({
   variable: "--font-quantico",
   subsets: ["latin"],
   weight: ["400", "700"],
+});
+const silkscreen = Silkscreen({
+  variable: "--font-BitcountGridDouble",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata = {

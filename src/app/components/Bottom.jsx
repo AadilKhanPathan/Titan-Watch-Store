@@ -56,16 +56,21 @@ import {
 
 export default function Bottom() {
   const [open, setOpen] = useState(false);
+
+  // For adding onlcick animation
+  const [bottomButton, setBottomButton] = useState("Home");
+
   const { data: session, status } = useSession();
 
   return (
-    <div className="sticky bottom-0 z-50 bg-white w-full">
+    <div className="md:hidden sticky bottom-0 z-50 bg-white w-full">
       <ul className="flex w-full items-center px-3 py-3 border-3 justify-between gap-5 text-sm text-white font-light">
-        <li className="text-black hover:border-b-2 hover:border-black cursor-pointer flex flex-col items-center">
-          <Home />
-          <Link href="/">Home</Link>
-        </li>
-
+        <Link href="/">
+          <li className="text-black hover:border-b-2 hover:border-black cursor-pointer flex flex-col items-center">
+            <Home />
+            Home
+          </li>
+        </Link>
         {/* CATEGORY SWIPE HANDLE */}
         <Drawer showSwipeHandle open={open} onOpenChange={setOpen}>
           <DrawerTrigger
@@ -150,7 +155,7 @@ export default function Bottom() {
 
           {session ? (
             // user is logged in
-            <DropdownMenuContent className="w-1xl rounded-xl">
+            <DropdownMenuContent className="w-1xl p-2 rounded-xl">
               <DropdownMenuGroup>
                 {/* USER IS NOT ADMIN */}
 
@@ -164,7 +169,6 @@ export default function Bottom() {
                     <AvatarFallback>
                       <User />
                     </AvatarFallback>
-                    
                   </Avatar>
                   <div>
                     {session?.user.name}
@@ -183,7 +187,6 @@ export default function Bottom() {
                   <Settings />
                   Settings
                 </DropdownMenuItem>
-                
 
                 {/* USER IS A ADMIN */}
                 <DropdownMenuItem className={"flex items-center gap-4"}>
@@ -201,7 +204,7 @@ export default function Bottom() {
                   <div>
                     <div className="flex justify-between gap-4">
                       <span>{session?.user.name}</span>
-                      <span className="mr-4 bg-green-400 text-green-900 px-2 rounded-sm ">
+                      <span className=" bg-green-400 text-green-900 px-2 rounded-sm ">
                         Admin
                       </span>
                     </div>
@@ -212,15 +215,19 @@ export default function Bottom() {
                   <LayoutDashboard />
                   Dashboard
                 </DropdownMenuItem>
-                <DropdownMenuItem className={"h-10 text-sm"}>
-                  <SquareDashedPlus />
-                  <Link href={"/additem"}>
-                  Add item</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className={"h-10 text-sm"}>
-                  <ScrollText />
-                  <Link href={"/listitem"}>products data</Link>
-                </DropdownMenuItem>
+                <Link href={"/additem"}>
+                  <DropdownMenuItem className={"h-10 text-sm"}>
+                    <SquareDashedPlus />
+                    Add item
+                  </DropdownMenuItem>
+                </Link>
+
+                <Link href={"/listitem"}>
+                  <DropdownMenuItem className={"h-10 text-sm"}>
+                    <ScrollText />
+                    products data
+                  </DropdownMenuItem>
+                </Link>
                 <DropdownMenuItem className={"h-10 text-sm"}>
                   <UserGroup />
                   Customers

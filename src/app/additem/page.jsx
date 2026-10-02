@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { LoaderCircle } from "lucide-react";
+import axios from "axios";
 
 export default function Page() {
   const [loading, setLoading] = useState(false);
@@ -79,14 +80,10 @@ export default function Page() {
         formData.append("images", image);
       });
 
-      const res = await fetch(`https://e-commerce-backend-4l6u.onrender.com/api/admin/add`, {
-        method: "POST",
-        body: formData,
-      });
+      const res = await axios.post(`https://e-commerce-backend-4l6u.onrender.com/api/admin/add`, formData);
 
-      const data = await res.json();
-
-      console.log(data);
+      console.log(res.data);
+      
     } catch (error) {
       console.log(error);
     } finally{
