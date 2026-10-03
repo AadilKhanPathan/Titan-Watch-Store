@@ -119,6 +119,7 @@ export default function Page() {
                 className="text-sm font-medium text-zinc-700"
               >
                 Product Name
+                <span className="text-red-500">*</span>
               </label>
               <input
                 id="name"
@@ -139,6 +140,7 @@ export default function Page() {
                 className="text-sm font-medium text-zinc-700"
               >
                 Brand
+                <span className="text-red-500">*</span>
               </label>
               <input
                 id="brand"
@@ -159,6 +161,7 @@ export default function Page() {
                 className="text-sm font-medium text-zinc-700"
               >
                 category
+                <span className="text-red-500">*</span>
               </label>
               <select
                 id="category"
@@ -222,6 +225,7 @@ export default function Page() {
         <div className="space-y-5">
           <h3 className="border-b pb-2 text-lg font-semibold text-zinc-800">
             Pricing
+            
           </h3>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -232,6 +236,7 @@ export default function Page() {
                 className="text-sm font-medium text-zinc-700"
               >
                 Price
+                <span className="text-red-500">*</span>
               </label>
 
               <div className="relative">
@@ -286,6 +291,7 @@ export default function Page() {
         <div className="space-y-5">
           <h3 className="border-b pb-2 text-lg font-semibold text-zinc-800">
             Product Images
+            
           </h3>
 
           <div className="space-y-2">
@@ -307,8 +313,8 @@ export default function Page() {
               className="block w-full cursor-pointer rounded-lg border border-zinc-300 bg-zinc-50 text-sm text-zinc-600 file:mr-4 file:border-0 file:bg-zinc-900 file:px-4 file:py-2.5 file:text-sm file:font-medium file:text-white hover:file:bg-zinc-800"
             />
 
-            <p className="text-xs text-zinc-500">
-              You can select multiple product images.
+            <p className="text-xs text-red-500">
+             upload at least one image
             </p>
           </div>
         </div>

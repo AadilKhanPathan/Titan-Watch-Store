@@ -63,7 +63,7 @@ export default function Bottom() {
   const { data: session, status } = useSession();
 
   return (
-    <div className="md:hidden sticky bottom-0 z-50 bg-white w-full">
+    <div className=" sticky bottom-0 z-50 bg-white w-full">
       <ul className="flex w-full items-center px-3 py-3 border-3 justify-between gap-5 text-sm text-white font-light">
         <Link href="/">
           <li className="text-black hover:border-b-2 hover:border-black cursor-pointer flex flex-col items-center">
@@ -81,7 +81,7 @@ export default function Bottom() {
               </button>
             }
           />
-          <DrawerContent className="bg-white/60 rounded-t-2xl overflow-hidden ">
+          <DrawerContent className="bg-white rounded-t-2xl overflow-hidden  ">
             <DrawerHeader>
               <DrawerTitle>Categories</DrawerTitle>
               <DrawerDescription>Select your category</DrawerDescription>
@@ -126,22 +126,25 @@ export default function Bottom() {
             <DrawerFooter>
               <DrawerClose
                 render={<Button>Close</Button>}
-                className={"rounded-sm"}
+                className="rounded-sm"
               />
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
 
-        <li className="text-black hover:border-b-2 hover:border-black cursor-pointer flex flex-col items-center ">
-          <Heart />
-          <Link href="/?category=Kids#collection">WishList</Link>
-        </li>
+        <Link href="/error">
+          <li className="text-black hover:border-b-2 hover:border-black cursor-pointer flex flex-col items-center ">
+            <Heart />
+            WishList
+          </li>
+        </Link>
 
-        <li className="text-black hover:border-b-2 hover:border-black cursor-pointer flex flex-col items-center ">
-          <ShoppingCart />
-          <Link href="/?category=Recommendations#collection">Cart</Link>
-        </li>
-
+        <Link href="/error">
+          <li className="text-black hover:border-b-2 hover:border-black cursor-pointer flex flex-col items-center ">
+            <ShoppingCart />
+            Cart
+          </li>
+        </Link>
         {/* DROPDOWN MENU */}
         <DropdownMenu>
           <DropdownMenuTrigger

@@ -12,7 +12,7 @@ export default function Footer() {
             {/* <!-- Brand --> */}
             <div>
               <h2 className="text-2xl font-bold tracking-tight text-white">
-                T<span className="text-red-600">I</span>TAN
+                T<span className="text-red-600">i</span>tan
                 <span className="text-red-600">.</span>
               </h2>
 
