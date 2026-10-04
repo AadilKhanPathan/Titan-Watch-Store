@@ -6,13 +6,12 @@ async function getData(category) {
   try {
     console.log(category);
     const res = await axios.get(
-      `https://e-commerce-backend-4l6u.onrender.com/api/user/category/${category}`
-        );
+      `https://e-commerce-backend-4l6u.onrender.com/api/user/category/${category}`,
+    );
 
     console.log(res.data);
 
     return res.data.data ?? [];
-    
   } catch (error) {
     console.error("getData error:", error);
     return [];
@@ -47,6 +46,7 @@ export default async function BestCollections({ category = "Men" }) {
                   src={item.images?.[0] || "/placeholder.jpg"}
                   alt={item.name || "Product Image"}
                   fill
+                  unoptimized
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                 />

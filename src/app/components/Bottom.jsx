@@ -63,7 +63,7 @@ export default function Bottom() {
   const { data: session, status } = useSession();
 
   return (
-    <div className=" sticky bottom-0 z-50 bg-white w-full">
+    <div className="md:hidden sticky bottom-0 z-50 bg-white w-full">
       <ul className="flex w-full items-center px-3 py-3 border-3 justify-between gap-5 text-sm text-white font-light">
         <Link href="/">
           <li className="text-black hover:border-b-2 hover:border-black cursor-pointer flex flex-col items-center">

@@ -18,9 +18,9 @@ export default async function page() {
   const data = await getlist();
 
   return (
-    <div className="mx-4 mt-4">
+    <div className="mx-4 my-4">
       <div className="w-full overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
-        <table className="w-full min-w-[500px] text-left text-sm">
+        <table className="w-full min-w-[500px] text-left text-sm ">
           {/* <!-- Table Header --> */}
           <thead className="border-b border-gray-200 bg-gray-50">
             <tr>
