@@ -6,7 +6,7 @@ A full-featured e-commerce web application for browsing and buying watches. Cust
 
 
 <h2>Demo</h2>
-<a href="https://e-commerce-website-weld-theta.vercel.app/">
+<a href="https://titan-watch-store.onrender.com/">
   <img src="https://img.shields.io/badge/LIVE_DEMO-000000?style=for-the-badge&logo=vercel&logoColor=white" />
 </a>
 
