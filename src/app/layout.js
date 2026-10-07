@@ -24,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${quantico.className}`}>
+      <body className={`${quantico.className} bg-gray-200`}>
         {/* <TooltipProvider>{children}</TooltipProvider> */}
         <SessionProvider>
           <Navbar />
