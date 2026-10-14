@@ -41,7 +41,7 @@ export default function Hero() {
         {/* Background image */}
 
         <Image
-          src={"/hero.jpg"}
+          src={"/bg.png"}
           alt="hero"
           fill
           priority
@@ -62,7 +62,8 @@ export default function Hero() {
           <p className="text-sm font-semibold tracking-wide text-gray-200 mb-2">
             Luxury Watch Brands
           </p>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+          <h1 className="font-heading
+           text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-wide">
             Timeless Elegance on Your wrist
           </h1>
 
@@ -86,7 +87,7 @@ export default function Hero() {
           </div>
         </div>
         {/* Clock Types Navigation */}
-        <ul className="absolute flex w-full bottom-0 text-white  items-center px-3 py-3  justify-center gap-5 text-sm text-white font-light">
+        {/* <ul className="absolute flex w-full bottom-0 text-white  items-center px-3 py-3  justify-center gap-5 text-sm text-white font-light">
 
           <li className=" flex flex-col items-center hover:border-black cursor-pointer border-2 p-2 rounded"> 
             <Watch />
@@ -111,7 +112,7 @@ export default function Hero() {
             </Link>
           </li>
 
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

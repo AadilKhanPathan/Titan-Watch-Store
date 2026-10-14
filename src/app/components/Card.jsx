@@ -26,11 +26,14 @@ export default async function BestCollections({ category = "Men" }) {
 
   return (
     <section id="collection" className="mt-12 p-3">
-      <h2 className="mb-6 text-2xl font-bold tracking-tight text-foreground">
+      <h2 className=" text-4xl font-bold mb-2 tracking-wide text-foreground font-heading text-center">
         {category == "Recommendations"
           ? "Recommendations for you"
-          : category + "'s collection"}
+          : category + "'s Collection"}
       </h2>
+      <h2 className="font-sans text-center mb-6 text-gray-500">
+  Precision, presence, and timeless design.
+</h2>
 
       <div className="grid grid-cols-2 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {data.map((item) => (
@@ -56,12 +59,12 @@ export default async function BestCollections({ category = "Men" }) {
               {/* Details */}
               <div className="mt-4 flex flex-col px-1">
                 {/* Brand */}
-                <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 font-sans">
                   {item.brand || "Casio"}
                 </p>
 
                 {/* Name */}
-                <h3 className="mt-1 line-clamp-1 text-base font-semibold text-zinc-900 transition-colors group-hover:text-red-700 dark:text-zinc-100 dark:group-hover:text-indigo-400">
+                <h3 className="mt-1 line-clamp-1 text-base font-semibold text-zinc-900 transition-colors group-hover:text-red-700 dark:text-zinc-100 dark:group-hover:text-indigo-400 font-heading">
                   {item.name || "Classic Silver Chronograph"}
                 </h3>
 

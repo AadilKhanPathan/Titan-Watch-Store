@@ -1,4 +1,4 @@
-import { Quantico, Silkscreen } from "next/font/google";
+import { Quantico, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { SessionProvider } from "next-auth/react";
 import Navbar from "./components/Navbar";
@@ -10,10 +10,15 @@ const quantico = Quantico({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
-const silkscreen = Silkscreen({
-  variable: "--font-BitcountGridDouble",
+
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400"],
+  variable: "--font-playfair",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata = {
@@ -24,7 +29,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${quantico.className} bg-gray-200`}>
+      <body className={`${quantico.variable} ${playfair.variable} ${inter.variable} font-heading bg-gray-200`}>
         {/* <TooltipProvider>{children}</TooltipProvider> */}
         <SessionProvider>
           <Navbar />
