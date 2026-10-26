@@ -50,10 +50,10 @@ A full-featured e-commerce web application for browsing and buying watches. Cust
 ### 📱 Mobile View
  
 <p align="center">
-  <img src="./screenshots/mobile/home.png" alt="Mobile Home" width="22%" />
-  <img src="./screenshots/mobile/product.png" alt="Mobile Product" width="22%" />
-  <img src="./screenshots/mobile/cart.png" alt="Mobile Cart" width="22%" />
-  <img src="./screenshots/mobile/checkout.png" alt="Mobile Checkout" width="22%" />
+<img width="22%" height="647" alt="image" src="https://github.com/user-attachments/assets/aad84faa-cf82-4289-a411-a7cb6ce28b50" />
+<img width="22%" height="647" alt="image" src="https://github.com/user-attachments/assets/39c9caa5-7d79-460f-b2c9-7f48b3ad33bb" />
+<img width="22%" height="647" alt="image" src="https://github.com/user-attachments/assets/472a211f-3e5b-418c-85ef-4f833de643a0" />
+<img width="22%" height="647" alt="image" src="https://github.com/user-attachments/assets/79a4d2d5-9bf3-48bf-98cc-a591753b7c3b" />
 </p>
 
 ## Features
