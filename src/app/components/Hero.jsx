@@ -2,8 +2,10 @@
 
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
+import {PixelImage} from "../../components/ui/pixel-image"
 import Link from "next/link";
 import {  AlarmClock, Clock, UserRoundArrowLeft, Watch } from "lucide-react";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 export default function Hero() {
   const { data: session, status } = useSession();
@@ -40,11 +42,10 @@ export default function Hero() {
       <div className="relative w-full h-[45vh] min-h-[500px]">
         {/* Background image */}
 
-        <Image
+        <PixelImage
           src={"/bg.png"}
           alt="hero"
-          fill
-          priority
+         
           className="object-cover"
         />
 
@@ -70,9 +71,10 @@ export default function Hero() {
           <div className="flex gap-3 mr-5">
             <Link
               href="#collection"
-              className="flex items-center gap-2 bg-white text-black font-semibold px-6 py-2 rounded-2xl hover:bg-white/80 transition"
+              
             >
-              Explore Collection
+              <InteractiveHoverButton>Explore Collection</InteractiveHoverButton>
+              
             </Link>
             {status === "loading" ? (<button className="flex items-center gap-2 bg-gray-500/40 text-white font-semibold px-6 py-2 rounded hover:bg-gray-500/60 transition">Loading...</button>) : !session ?
             (<button
