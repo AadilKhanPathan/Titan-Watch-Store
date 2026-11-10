@@ -1,11 +1,10 @@
+import { api } from "@/lib/axios";
 import axios from "axios";
 
 export default async function page() {
   async function getlist() {
     try {
-      const res = await axios.get(
-        `https://e-commerce-backend-4l6u.onrender.com/api/admin/list`,
-      );
+      const res = await api.get(`/admin/list`);
 
       console.log(res.data);
       return res.data.list ?? [];

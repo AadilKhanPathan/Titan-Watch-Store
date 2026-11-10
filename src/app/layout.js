@@ -29,7 +29,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${quantico.variable} ${playfair.variable} ${inter.variable} font-heading bg-gray-200`}>
+      <body className={`${quantico.variable} ${playfair.variable} ${inter.variable} font-heading bg-[#FAF7F2]`}>
         {/* <TooltipProvider>{children}</TooltipProvider> */}
         <SessionProvider>
           <Navbar />

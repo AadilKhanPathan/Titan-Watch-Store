@@ -1,13 +1,10 @@
+import { api } from "@/lib/axios";
 import Image from "next/image";
 import React from "react";
 
 async function getDetails(id) {
   try {
-    const res = await fetch(
-      `https://e-commerce-backend-4l6u.onrender.com/api/admin/item/${id}`,
-    );
-
-    const data = await res.json();
+    const { data } = await api.get(`/admin/item/${id}`);
 
     console.log(data);
     return data.item;
@@ -28,8 +25,7 @@ export default async function page({ params }) {
           <Image
             src={details.images[0]}
             width={260}
-            
-  unoptimized
+            unoptimized
             height={390}
             alt="Regalia Opulent LII Quartz Multifunction Watch"
             className="p-4 rounded border-2 border-zinc-500 ring-1 ring-black/5"
