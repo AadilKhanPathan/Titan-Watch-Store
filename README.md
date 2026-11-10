@@ -38,11 +38,11 @@ A full-featured e-commerce web application for browsing and buying watches. Cust
 
 ### 🖥️ Desktop View
 
-|                                               🏠 Home Page                                               |                                              ⌚ Product Page                                              |
+|                                                  Home Page                                               |                                              Product Page                                              |
 | :------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: |
 | <img src="https://github.com/user-attachments/assets/c8f9d245-6cef-469e-a5bb-ac1c8f6c20e8" width="450"/> |  <img src="https://github.com/user-attachments/assets/1771b7fd-fecc-48fe-a906-1b0d48ab2f5a" width="450"/> |
 
-|                                               ➕ Add Product                                              |                                              📦 Product List                                             |
+|                                                  Add Product                                              |                                               Product List                                             |
 | :------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: |
 | <img src="https://github.com/user-attachments/assets/e89d6463-c187-4e14-8337-755e20a2b310" width="450"/>  | <img src="https://github.com/user-attachments/assets/99081caa-1034-481c-a166-d9c1034fb534" width="450"/> |
 
