@@ -55,6 +55,7 @@ A full-featured e-commerce web application for browsing and buying watches. Cust
 <img width="22%" height="647" alt="image" src="https://github.com/user-attachments/assets/472a211f-3e5b-418c-85ef-4f833de643a0" />
 <img width="22%" height="647" alt="image" src="https://github.com/user-attachments/assets/79a4d2d5-9bf3-48bf-98cc-a591753b7c3b" />
 </p>
+<img width="1024" height="576" alt="image" src="https://github.com/user-attachments/assets/b95886b2-c593-4485-983e-b290fa080cbd" />
 
 ## Features
 - 👤 Customer Features
